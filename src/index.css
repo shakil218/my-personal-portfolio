@@ -1,0 +1,27 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* @tailwind base;
+@tailwind components; */
+@tailwind utilities;
+
+/* Global dark glass background */
+body {
+  background: linear-gradient(
+    135deg,
+    #020617,   /* deep navy */
+    #000000,   /* black */
+    #020617
+  );
+  color: #e5e7eb;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glass utility class */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+}
