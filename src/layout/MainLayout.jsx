@@ -5,6 +5,7 @@ import About from '../pages/About';
 // import Projects from '../pages/Projects';
 import SkillsSection from '../pages/skills/SkillsSection';
 import ProjectsSection from '../pages/projects/ProjectsSection';
+import ExperienceSection from '../pages/experience/ExperienceSection';
 
 const MainLayout = () => {
   return (
@@ -16,6 +17,7 @@ const MainLayout = () => {
         <SkillsSection></SkillsSection>
         {/* <Projects></Projects> */}
         <ProjectsSection></ProjectsSection>
+        <ExperienceSection></ExperienceSection>
       </main>
     </>
   );
