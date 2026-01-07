@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Home from '../pages/Home';
+import About from '../pages/About';
 
 const MainLayout = () => {
   return (
@@ -8,6 +9,7 @@ const MainLayout = () => {
       <Navbar></Navbar>   
       <main>
         <Home></Home>
+        <About></About>
       </main>
     </>
   );
