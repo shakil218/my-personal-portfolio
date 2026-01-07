@@ -5,9 +5,9 @@ const About = () => {
   return (
     <section
       id="about"
-      className="relative min-h-screen px-6 pt-28 sm:pt-32 md:pt-36 lg:pt-24 flex items-center justify-center"
+      className="relative min-h-screen px-6 pt-24 flex items-center justify-center"
     >
-      <div className="glass max-w-6xl w-full p-10 grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div className="glass max-w-6xl w-full p-10 grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* LEFT CONTENT */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
