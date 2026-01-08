@@ -8,6 +8,7 @@ import ProjectsSection from '../pages/projects/ProjectsSection';
 import ExperienceSection from '../pages/experience/ExperienceSection';
 import ServicesSection from '../pages/service/ServicesSection';
 import Contact from '../pages/Contact';
+import Footer from '../components/Footer';
 
 const MainLayout = () => {
   return (
@@ -22,6 +23,7 @@ const MainLayout = () => {
         <ProjectsSection></ProjectsSection>
         <Contact></Contact>
       </main>
+      <Footer></Footer>
     </>
   );
 };

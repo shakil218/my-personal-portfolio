@@ -1,8 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
-import heroBg from "../assets/profile-background.png";
 import profileImg from "../assets/profile.png";
+import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const roles = [
   "UI / UX Designer",
@@ -28,14 +29,7 @@ const Home = () => {
       id="home"
       className="relative min-h-screen flex items-center justify-center px-6
         pt-24 "
-      style={{
-        backgroundImage: `linear-gradient(
-          rgba(2, 6, 23, 0.85),
-          rgba(0, 0, 0, 0.85)
-        ), url(${heroBg})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-      }}
+      style={{}}
     >
       {/* Glass Container */}
       <div className="glass max-w-6xl w-full p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10">
@@ -91,13 +85,23 @@ const Home = () => {
             transition={{ delay: 0.4 }}
             className="flex gap-4"
           >
-            <button className="px-6 py-3 rounded-xl bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 transition">
+            <HashLink
+              smooth
+              to={"#projects"}
+              className="px-6 py-3 rounded-xl border bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 transition"
+            >
               View Projects
-            </button>
+            </HashLink>
 
-            <button className="px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10 transition">
-              Contact Me
-            </button>
+            {/* Resume Button */}
+            <Link
+              to={"/resume.pdf"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10  transition"
+            >
+              Resume
+            </Link>
           </motion.div>
         </div>
 

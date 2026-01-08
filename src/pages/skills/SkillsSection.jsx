@@ -17,17 +17,20 @@ import {
   SiMongodb,
   SiFirebase,
   SiExpress,
-  SiVite,
   SiJsonwebtokens,
+  SiOpenai,
 } from "react-icons/si";
 import SkillCard from "./SkillCard";
-
 
 const skillsData = {
   frontend: [
     { name: "HTML", icon: <FaHtml5 className="text-orange-500" />, level: 95 },
     { name: "CSS", icon: <FaCss3Alt className="text-blue-500" />, level: 92 },
-    { name: "JavaScript", icon: <FaJs className="text-yellow-400" />, level: 88 },
+    {
+      name: "JavaScript",
+      icon: <FaJs className="text-yellow-400" />,
+      level: 88,
+    },
     { name: "React", icon: <FaReact className="text-cyan-400" />, level: 85 },
     {
       name: "Tailwind CSS",
@@ -36,9 +39,21 @@ const skillsData = {
     },
   ],
   backend: [
-    { name: "Node.js", icon: <FaNodeJs className="text-green-500" />, level: 82 },
-    { name: "Express.js", icon: <SiExpress className="text-gray-300" />, level: 80 },
-    { name: "MongoDB", icon: <SiMongodb className="text-green-400" />, level: 78 },
+    {
+      name: "Node.js",
+      icon: <FaNodeJs className="text-green-500" />,
+      level: 82,
+    },
+    {
+      name: "Express.js",
+      icon: <SiExpress className="text-gray-300" />,
+      level: 80,
+    },
+    {
+      name: "MongoDB",
+      icon: <SiMongodb className="text-green-400" />,
+      level: 78,
+    },
     {
       name: "Firebase",
       icon: <SiFirebase className="text-yellow-400" />,
@@ -48,7 +63,7 @@ const skillsData = {
   tools: [
     { name: "Git", icon: <FaGitAlt className="text-orange-500" />, level: 85 },
     { name: "GitHub", icon: <FaGithub className="text-gray-300" />, level: 88 },
-    { name: "Vite", icon: <SiVite className="text-purple-400" />, level: 80 },
+    { name: "AI", icon: <SiOpenai className="text-green-400" />, level: 85 },
     { name: "REST API", icon: <FaCode className="text-cyan-400" />, level: 82 },
     {
       name: "JWT",
@@ -57,8 +72,6 @@ const skillsData = {
     },
   ],
 };
-
-
 
 const SkillsSection = () => {
   return (
