@@ -6,6 +6,7 @@ import About from '../pages/About';
 import SkillsSection from '../pages/skills/SkillsSection';
 import ProjectsSection from '../pages/projects/ProjectsSection';
 import ExperienceSection from '../pages/experience/ExperienceSection';
+import ServicesSection from '../pages/service/ServicesSection';
 
 const MainLayout = () => {
   return (
@@ -15,9 +16,9 @@ const MainLayout = () => {
         <Home></Home>
         <About></About>
         <SkillsSection></SkillsSection>
-        {/* <Projects></Projects> */}
-        <ProjectsSection></ProjectsSection>
+        <ServicesSection></ServicesSection>
         <ExperienceSection></ExperienceSection>
+        <ProjectsSection></ProjectsSection>
       </main>
     </>
   );

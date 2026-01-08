@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 const ExperienceCard = ({ experience }) => {
   const Icon = experience.icon;
+
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
