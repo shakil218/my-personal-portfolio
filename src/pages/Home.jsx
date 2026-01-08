@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 import { useEffect, useState } from "react";
 import heroBg from "../assets/profile-background.png";

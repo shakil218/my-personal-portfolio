@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
+// eslint-disable-next-line no-unused-vars
 import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { name: "Home", id: "home" },
   { name: "About", id: "about" },
+  { name: "Skills", id: "skills" },
+  { name: "Services", id: "services" },
   { name: "Projects", id: "projects" },
   { name: "Contact", id: "contact" },
 ];
@@ -80,7 +83,7 @@ const Navbar = () => {
               {active === link.id && (
                 <motion.span
                   layoutId="nav-underline"
-                  className="absolute left-0 -bottom-1 h-[2px] w-full bg-cyan-400 rounded"
+                  className="absolute left-0 -bottom-1 h-0.5 w-full bg-cyan-400 rounded"
                 />
               )}
             </li>
