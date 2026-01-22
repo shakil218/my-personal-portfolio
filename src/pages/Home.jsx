@@ -88,7 +88,7 @@ const Home = () => {
             <HashLink
               smooth
               to={"#projects"}
-              className="px-6 py-3 rounded-xl border bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 transition"
+              className="px-3 md:px-6 py-3 rounded-xl border bg-cyan-500/20 text-cyan-400 hover:bg-cyan-500/30 transition"
             >
               View Projects
             </HashLink>
@@ -98,7 +98,7 @@ const Home = () => {
               to={"/resume.pdf"}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10  transition"
+              className="px-3 md:px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10  transition"
             >
               Resume
             </Link>
