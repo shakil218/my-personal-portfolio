@@ -1,5 +1,5 @@
 // eslint-disable-next-line no-unused-vars
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import profileImg from "../assets/profile.png";
 import { Link } from "react-router-dom";
@@ -13,23 +13,43 @@ const roles = [
 ];
 
 const Home = () => {
+  // MODIFIED: Added states for typing animation
+  const [text, setText] = useState("");
   const [index, setIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
 
-  // Infinite animated role loop
+  // MODIFIED: Replaced old interval animation with typing effect
   useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % roles.length);
-    }, 2500);
+    const currentWord = roles[index];
+    const speed = isDeleting ? 50 : 100;
 
-    return () => clearInterval(interval);
-  }, []);
+    const timer = setTimeout(() => {
+      if (!isDeleting) {
+        setText(currentWord.substring(0, charIndex + 1));
+        setCharIndex((prev) => prev + 1);
+
+        if (charIndex + 1 === currentWord.length) {
+          setTimeout(() => setIsDeleting(true), 1000);
+        }
+      } else {
+        setText(currentWord.substring(0, charIndex - 1));
+        setCharIndex((prev) => prev - 1);
+
+        if (charIndex - 1 === 0) {
+          setIsDeleting(false);
+          setIndex((prev) => (prev + 1) % roles.length);
+        }
+      }
+    }, speed);
+
+    return () => clearTimeout(timer);
+  }, [charIndex, isDeleting, index]);
 
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center px-6
-        pt-24 "
-      style={{}}
+      className="relative min-h-screen flex items-center justify-center px-6 pt-24"
     >
       {/* Glass Container */}
       <div className="glass max-w-6xl w-full p-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-center z-10">
@@ -40,7 +60,7 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             className="text-gray-300 mb-2"
           >
-            Hello.
+            Hello <span className="text-cyan-400 text-xs">there</span>.
           </motion.p>
 
           <motion.h1
@@ -49,23 +69,15 @@ const Home = () => {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold text-white mb-3"
           >
-            I'm <span className="text-cyan-400">Shakil</span>
+            I'm <span className="text-cyan-400">Md Shakil Islam</span>
           </motion.h1>
 
-          {/* Animated Role Text */}
-          <div className="h-10 mb-6 overflow-hidden">
-            <AnimatePresence mode="wait">
-              <motion.h2
-                key={roles[index]}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
-                className="text-xl md:text-2xl font-semibold text-gray-300"
-              >
-                {roles[index]}
-              </motion.h2>
-            </AnimatePresence>
+          {/* MODIFIED: Typing Animation Text */}
+          <div className="h-10 mb-6 overflow-hidden flex items-center">
+            <h2 className="text-xl md:text-2xl font-semibold text-gray-300">
+              {text}
+              <span className="animate-pulse text-cyan-400">|</span>
+            </h2>
           </div>
 
           <motion.p
@@ -93,12 +105,11 @@ const Home = () => {
               View Projects
             </HashLink>
 
-            {/* Resume Button */}
             <Link
               to={"/resume.pdf"}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 md:px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10  transition"
+              className="px-3 md:px-6 py-3 rounded-xl border border-white/20 text-white hover:bg-white/10 transition"
             >
               Resume
             </Link>
