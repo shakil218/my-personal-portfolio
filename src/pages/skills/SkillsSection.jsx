@@ -1,4 +1,4 @@
- // eslint-disable-next-line no-unused-vars
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 import {
   FaHtml5,
@@ -20,6 +20,7 @@ import {
   SiExpress,
   SiJsonwebtokens,
   SiOpenai,
+  SiNextdotjs,
 } from "react-icons/si";
 
 import SkillCard from "./SkillCard";
@@ -31,6 +32,12 @@ const skillsData = {
     { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
     { name: "React", icon: <FaReact className="text-cyan-400" /> },
     { name: "Tailwind CSS", icon: <SiTailwindcss className="text-sky-400" /> },
+    {
+      name: "Next.js",
+      icon: (
+        <SiNextdotjs className="text-gray-200 hover:text-white transition" />
+      ),
+    },
   ],
 
   backend: [
@@ -56,7 +63,6 @@ const SkillsSection = () => {
       className="relative min-h-screen px-6 pt-24 flex items-center justify-center"
     >
       <div className="max-w-6xl w-full">
-
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -74,7 +80,6 @@ const SkillsSection = () => {
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-
           <SkillCard
             title="Frontend"
             icon={<FaCode />}
@@ -95,7 +100,6 @@ const SkillsSection = () => {
             skills={skillsData.tools}
             variant="tools"
           />
-
         </div>
       </div>
     </section>
